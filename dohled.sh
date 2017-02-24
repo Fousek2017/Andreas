@@ -4,18 +4,19 @@ cas=`date +%T" "%D`
 ip=`ifconfig | grep Všesměr | awk -F ":" '{print $2}' | awk -F " " '{print $1}'`
 rx=`ifconfig eth0 | grep Přijato | awk -F "(" '{print $2}' | awk -F ")" '{print $1}'`
 tx=`ifconfig eth0 | grep Přijato | awk -F "(" '{print $3}' | awk -F ")" '{print $1}'`
+users=`who | wc -l`
+echo "-----------------------------------------------------------------------"
+echo "Aktuální čas: "$cas"<br>" >> /home/student/Plocha/skripty/Andreas/index.html
+echo "<hr>" >> /home/student/Plocha/skripty/Andreas/index.html
+echo "Moje IP: "$ip "<br>" >> /home/student/Plocha/skripty/Andreas/index.html
+echo "<hr>" >> /home/student/Plocha/skripty/Andreas/index.html
+echo "Přijatá data: "$rx "br" >>  /home/student/Plocha/skripty/Andreas/index.html
+echo "<hr>" >>  /home/student/Plocha/skripty/Andreas/index.html
+echo "Odeslaná data: "$tx "br" >> /home/student/Plocha/skripty/Andreas/index.html
+echo "<hr>" >> /home/student/Plocha/skripty/Andreas/index.html
+echo "Počet přihlášených:"$users "br" >> /home/student/Plocha/Andreas/skripty/index.html
 
-uzivatele=`who | wc` 
-pamet=`free | grep Mem:| awk -F " " '{print $3}'`
-#počet nalogovaných uživatelů
-#velikost disku, použito, použito v %
-#obsazenost paměti
+echo "<br><br>" >> /home/student/Plocha/skripty/Andreas/index.html
+echo "-----------------------------------------------------------------------" >> /home/student/Plocha/skripty/Andreas/index.html
 
-echo "Aktuální čas: "$cas >> dohled
-echo "Moje IP: "$ip >> dohled 
-echo "Přijatá data: "$rx >> dohled
-echo "Odeslaná data: "$tx >> dohled 
-echo "Uživatele:" $uzivatele >> dohled
-echo "Pamet:" $pamet >> dohled
-echo "-------------------------------------------------------------------------------------" >> dohled
 
